@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$colorLink: #009e82;
+$textColor: black;
+
+.wrapper{
+    max-width: 1205px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('MyriadPro-Regular.eot');
+    src: url('MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('MyriadPro-Regular.woff') format('woff'),
+    url('MyriadPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Mobile version
+@media(max-width: 1167px){
+    //Tooltip
+    details{
+        display:block;
+        background: #fff;
+        box-shadow: 0 10px 15px -5px $textColor, 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        overflow:hidden;
+        margin-bottom: 13px;
+      }
+      summary::-webkit-details-marker{display:none;}
+      summary::-moz-list-bullet{list-style-type:none;}
+      summary::marker{display:none;} 
+      summary {
+         display:block;
+         padding: 13px 1em .3em .9em;
+         font-size:1.4em;
+         cursor: pointer;
+         position: relative;
+      }
+      
+      summary:before {  
+        top: .4em;
+        right: .3em;
+        background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNTkgOC41OUwxMiAxMy4xNyA3LjQxIDguNTkgNiAxMGw2IDYgNi02eiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=") no-repeat 50% 50% / 1em 1em;
+        width: 1em;
+        height: 1em;  
+        content: "";
+        position: absolute;
+        transition: transform .5s;
+      }
+      details[open] > summary:before {
+        transform: scale(1,-1);
+      }
+      summary ~ * {
+         padding: 0 1em 10px 1.4em;
+      }
+      details[open] summary ~ *{ 
+        animation: sweep .5s ease-in-out;
+      }
+      @keyframes sweep {
+        0%    {opacity: 0;}
+        100%  {opacity: 1;}
+      }
+      summary:focus {
+        outline:0;
+        box-shadow: inset 0 0 1px $textColor, inset 0 0 2px rgba(0,0,0,0.3);
+      }
+       //Tooltip end
+
+
+    header{
+        height: 100vh;
+        background: url(../img/bg.png) center no-repeat / cover;
+    }
+
+    .text-wrapp{
+        max-width: 100vh;
+        background: url(../img/bg-user-mobile.png) right no-repeat / cover;
+    }
+    h1{
+        margin-top: 60px;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    h2{
+        margin-top: 31px;
+        margin-bottom: 30px;
+    }
+    //icons
+    .icon-diplomat{
+        width: 34px;
+        margin-right: 19px;
+        float: left;
+    }
+    .icon-graphic{
+        width: 35px;
+        margin-right: 16px;
+        float: left;
+    }
+    .icon-user{
+        width: 29px;
+        margin-right: 21px;
+        float: left;
+        margin-bottom: 5px;
+    }
+    .cards{
+        display: none;
+    }
+    
+    .button-open-bill{
+        width: 156px;
+        height: 46px;
+        background-color: $colorLink;
+        border: none;
+        margin-top: 44px;
+        margin-bottom: 250px;
+        border-radius: 5px;
+    }
+    .button-open-bill:hover{
+        opacity: 0.6;
+    }
+    .number{
+        color: $colorLink;
+        font-size: 23px;
+        margin-right: 18px;
+    }
+    a{
+        color: $textColor;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    main{
+        display: none
+    }
+}
+
+//Desktop
+@media (min-width: 1168px){
+    .header-tooltip{
+        display: none;
+    }
+    .details{
+        display: none;
+    }
+    header{
+        height: 100%;
+        background-size: 100%;
+        background: url(../img/bg.png) center no-repeat / cover;
+    }
+    .main{
+        max-height: 100%;
+        background: url(../img/bg-user.png)  center no-repeat / cover;
+    }
+    h1{
+        text-align: center;
+        margin-top: 263px;
+        font-size: 48px;
+    }
+    .solo, .button-open-bill{
+        display: none; 
+    }
+    .cards{
+        display: flex;
+        margin-top: 78px;
+        margin-bottom: 250px;
+    }
+    .cards .cards-link:hover{
+        border: 1px solid $colorLink;
+    }
+    .cards-link{
+        width: 347px;
+        height: 347px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        margin-right: 52px;
+        flex-direction: column;
+        opacity: 0.7;
+        text-align: center;
+
+        a{
+            color: black;
+        }
+        .icon-graphic{
+            width: 83px;
+            height: 64px;
+            margin-top: 99px;
+            margin-bottom: 20px;
+            margin-left: 134px;
+            margin-right: 130px;
+        }
+        .icon-diplomat{
+            width: 79px;
+            height: 66px;
+            margin-top: 103px;
+            margin-bottom: 20px;
+            margin-left: 142px;
+            margin-right: 142px;
+        }
+        .icon-user{
+            width: 70px;
+            height: 84px;
+            margin-top: 86px;
+            margin-bottom: 20px;
+            margin-left: 147px;
+            margin-right: 148px;  
+        }
+    }
+    a{
+        text-decoration: none;
+        color: rgba(46, 46, 46, 255);
+        font-size: 26px;
+    }
+
+    .navbar{
+        margin-top: 50px;
+        text-align: center;
+        margin-bottom: 86px;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #c6c6c2;
+        a{
+            padding: 41px 100px;
+        }
+        a:hover {
+            color: $colorLink;
+            border-bottom: 1px solid $colorLink;
+        }
+    }
+    .button-continue{
+        width: 156px;
+        height: 46px;
+        background-color: $colorLink;
+        border: none;
+        margin-top: 44px;
+        margin-bottom: 250px;
+        :hover{
+            opacity: 0.6;
+        }
+    }
+    .text-wrapp{
+        text-align: left;
+        max-width: 677px;
+        .text-work{
+        align-items: center;
+        margin: 0 auto;
+        .number{
+            color: $colorLink;
+            font-size: 23px;
+            margin-right: 18px;
+        }
+        }
+    }  
+    h2{
+        margin-top: 47px;
+        margin-bottom: 37px;
+    }
+    .menu{
+        color: $textColor;
+    }
+}
+
+
+
+
+
